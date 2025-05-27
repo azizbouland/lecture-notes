@@ -1,6 +1,6 @@
 # LaTeX code for some of my lecture notes
 
-## Algebraic topology
+## Commutative Algebra
 
 ![Colorful notes](https://user-images.githubusercontent.com/7069691/159117292-d0c03dfa-7a85-450f-a625-74433c3673a3.png)
 
