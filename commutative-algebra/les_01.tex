@@ -28,7 +28,7 @@
 \section{Rings and Ring homomorphisms}
 
 \begin{definition}[Ring]
-    A \emph{ring} \( A \) is a set with two binary operations (addition and multiplication) such that:
+    A \term{ring} \( A \) is a set with two binary operations (addition and multiplication) such that:
     \begin{enumerate}
         \item \( A \) is an abelian group with respect to addition (so that \( A \) has a zero element, denoted by \( 0 \), and every \( x \in A \) has an additive inverse \( -x \)).
         \item Multiplication is associative and distributive over addition:
@@ -45,11 +45,11 @@ If \( 1 = 0 \), then for any \( x \in A \), we have
 \[
 x = x1 = x0 = 0,
 \]
-and so \( A \) has only one element, \( 0 \). In this case, \( A \) is the \emph{zero ring}, denoted by \( 0 \).
+and so \( A \) has only one element, \( 0 \). In this case, \( A \) is the \term{zero ring}, denoted by \( 0 \).
 \end{remark}
     
 \begin{definition}[Ring Homomorphism]
-A \emph{ring homomorphism} is a mapping \( f: A \to B \) between rings \( A \) and \( B \) such that:
+A \term{ring homomorphism} is a mapping \( f: A \to B \) between rings \( A \) and \( B \) such that:
 \begin{enumerate}
     \item \( f(x + y) = f(x) + f(y) \),
     \item \( f(xy) = f(x)f(y) \),
@@ -58,7 +58,7 @@ A \emph{ring homomorphism} is a mapping \( f: A \to B \) between rings \( A \) a
 \end{definition}
 
 \begin{definition}[Subring] A subset \( S \subseteq A \) is a
-\emph{subring} if it is closed under addition and multiplication and
+\term{subring} if it is closed under addition and multiplication and
 contains the identity element of \( A \). \end{definition}
     
 % Functor from category of topological spaces to the category of groups.
@@ -96,11 +96,11 @@ contains the identity element of \( A \). \end{definition}
 \section{Ideals. Quotient Rings}
 
 \begin{definition}[Ideal]
-    An \emph{ideal} \( \mathfrak{a} \subseteq A \) is a subset which is an additive subgroup and satisfies \( A\mathfrak{a} \subseteq \mathfrak{a} \), i.e., for all \( x \in A \), \( y \in \mathfrak{a} \), we have \( xy \in \mathfrak{a} \).
+    An \term{ideal} \( \mathfrak{a} \subseteq A \) is a subset which is an additive subgroup and satisfies \( A\mathfrak{a} \subseteq \mathfrak{a} \), i.e., for all \( x \in A \), \( y \in \mathfrak{a} \), we have \( xy \in \mathfrak{a} \).
     \end{definition}
     
     \begin{definition}[Quotient Ring]
-    Given a ring \( A \) and an ideal \( \mathfrak{a} \subset A \), the \emph{quotient ring} \( A/\mathfrak{a} \) is the additive quotient group equipped with multiplication induced from \( A \), where the elements are cosets of \( \mathfrak{a} \), and the mapping
+    Given a ring \( A \) and an ideal \( \mathfrak{a} \subset A \), the \term{quotient ring} \( A/\mathfrak{a} \) is the additive quotient group equipped with multiplication induced from \( A \), where the elements are cosets of \( \mathfrak{a} \), and the mapping
     \[
     \varphi: A \to A/\mathfrak{a}, \quad x \mapsto x + \mathfrak{a}
     \]
@@ -123,278 +123,366 @@ contains the identity element of \( A \). \end{definition}
         \end{array}
         \]
     \end{theorem}
+
+\section{Prime ideals and Maximal Ideals}
+
+\begin{theorem}
+Every ring \( A \ne (0) \) has at least one maximal ideal.
+\end{theorem}
+
+\begin{corollary}
+If \( \mathfrak{a} \ne (1) \) is an ideal of \( A \), there exists a maximal ideal of \( A \) containing \( \mathfrak{a} \).
+\end{corollary}
+
+\begin{corollary}
+Every non-unit \( a \in A \) is contained in a maximal ideal.
+\end{corollary}
+
+\leavevmode\vspace{0.5em} % forces line break after "Remark."
+
+\textbf{Remarks.}
+
+\begin{enumerate}
+    \item If \( A \) is Noetherian (Chapter 7), we can avoid the use of Zorn’s lemma: the set of all ideals \( \ne (1) \) has a maximal element.
+    \item There exist rings with exactly one maximal ideal, for example: local rings. A ring \( A \) with exactly one maximal ideal is called a \term{local ring}. The field \( k = A / \mathfrak{m} \) is called the \term{residue field} of \( A \).
+\end{enumerate}
+
+% \begin{remark}
+%     \leavevmode\vspace{0.5em} % forces line break after "Remark."
+%     \begin{enumerate}
+%     \item If \( A \) is Noetherian (Chapter 7), we can avoid the use of Zorn’s lemma: the set of all ideals \( \ne (1) \) has a maximal element.
+%     \item There exist rings with exactly one maximal ideal, for example: local rings. A ring \( A \) with exactly one maximal ideal is called a \term{local ring}. The field \( k = A / \mathfrak{m} \) is called the \term{residue field} of \( A \).
+% \end{enumerate}
+% \end{remark}
+
+\begin{prop}
+Let \( A \) be a ring and \( \mathfrak{m} \) an ideal of \( A \) such that every \( x \in A - \mathfrak{m} \) is a unit in \( A \). Then \( A \) is a local ring and \( \mathfrak{m} \) its maximal ideal.
+\end{prop}
+
+\begin{prop}
+Let \( A \) be a ring and \( \mathfrak{m} \) a maximal ideal of \( A \), such that every element of \( 1 + \mathfrak{m} \) (i.e., every \( 1 + x \), where \( x \in \mathfrak{m} \)) is a unit in \( A \). Then \( A \) is a local ring.
+\end{prop}
+
+\begin{prop}
+Let \( x \in A - \mathfrak{m} \). Since \( \mathfrak{m} \) is maximal, the ideal generated by \( x \) and \( \mathfrak{m} \) is \( (1) \), hence there exist \( y \in A \) and \( r \in \mathfrak{m} \) such that \( xy + r = 1 \); hence \( xy = 1 - r \) belongs to \( 1 + \mathfrak{m} \) and therefore is a unit.
+\end{prop}
+
+A ring with only a finite number of maximal ideals is called \term{semi-local}.
+
+\begin{prop}
+i) Let \( A \) be a ring and \( \mathfrak{m} \ne (1) \) an ideal of \( A \) such that every \( x \in A - \mathfrak{m} \) is a unit in \( A \). Then \( A \) is a local ring and \( \mathfrak{m} \) its maximal ideal.
+
+ii) Let \( A \) be a ring and \( \mathfrak{m} \) a maximal ideal of \( A \), such that every element of \( 1 + \mathfrak{m} \) (i.e., every \( 1 + x \), where \( x \in \mathfrak{m} \)) is a unit in \( A \). Then \( A \) is a local ring.
+\end{prop}
+
+A ring with only a finite number of maximal ideals is called \term{semi-local}.
+
+\begin{eg}
+Let \( A = k[x_1, \ldots, x_n] \), where \( k \) is a field. Let \( f \in A \) be an irreducible polynomial. By unique factorization, the ideal \( (f) \) is prime.
+\end{eg}
+
+\begin{eg}
+Let \( A = \mathbb{Z} \). Every ideal in \( \mathbb{Z} \) is of the form \( (m) \) for some \( m \ge 0 \). The ideal \( (m) \) is prime \( \Leftrightarrow m = 0 \) or a prime number. All the ideals \( (p) \), where \( p \) is a prime number, are maximal: \( \mathbb{Z}/(p) \) is the field of \( p \) elements.
+\end{eg}
+
+\begin{remark}
+The same holds in Example 1 for \( n = 1 \), but not for \( n > 1 \). 
+The ideal \( \mathfrak{m} \) of all polynomials in \( A = k[x_1, 
+\ldots, x_n] \) with zero constant term is maximal (since it is the 
+kernel of the homomorphism \( A \to k \), which maps \( f \in A \) to 
+\( f(0) \)). But if \( n > 1 \), \( \mathfrak{m} \) is not a principal
+ ideal (requires at least \( n \) generators).
+\end{remark}
+
+\begin{eg}
+A \term{principal ideal domain} is an integral domain in which every ideal is principal. In such a ring, every non-zero prime ideal is maximal.
+
+For if \( (x) \ne 0 \) is a prime ideal and \( (y) \supset (x) \), we have \( x \in (y) \), say \( x = yz \), so that \( yz \in (x) \) and \( y \notin (x) \), hence \( z \in (x) \); say \( z = tx \). Then \( x = ytx \), so that \( yt = 1 \), and therefore \( (y) = (1) \).
+\end{eg}
+
+
+
         
         
 % \section{Prime ideals & Maximal Ideals}
 
+% \begin{theorem}[Second Isomorphism Theorem]
+%         Given an ideal \( \mathfrak{a} \subseteq A \), there is a one-to-one, order-preserving correspondence between the ideals \( \mathfrak{b}' \supseteq \mathfrak{a} \) in \( A \) and the ideals \( \mathfrak{b} \) in \( A/\mathfrak{a} \), given by
+%         \[
+%         \begin{array}{c@{\quad}c@{\quad}c}
+%         A & \xrightarrow{\hspace{1.2cm}\pi\hspace{0.5cm}} & A/\mathfrak{a} \\
+%         \mathfrak{a} \subseteq \mathfrak{b}' & \xleftrightarrow{\hspace{1.2cm}} & \mathfrak{b}
+%         \end{array}
+%         \]
+%     \end{theorem}
         
         
     
 
-Pick a base point $x_0$ and consider it fixed. (The fundamental group will not depend on it. We assume all spaces are path connected)
-$X \leadsto \pi(X)$.
-\begin{itemize}
-    \item A loop based at $x_0 \in X$ is a map $f: I = [0, 1] \to X$, $f(0) = f(1) = x_0$.
-    \item Loops are equivalent if one can be deformed in the other in a continuous way, with the base point fixed.
-    \item The fundamental group consists of equivalent classes of loops.
-\end{itemize}
+% Pick a base point $x_0$ and consider it fixed. (The fundamental group will not depend on it. We assume all spaces are path connected)
+% $X \leadsto \pi(X)$.
+% \begin{itemize}
+%     \item A loop based at $x_0 \in X$ is a map $f: I = [0, 1] \to X$, $f(0) = f(1) = x_0$.
+%     \item Loops are equivalent if one can be deformed in the other in a continuous way, with the base point fixed.
+%     \item The fundamental group consists of equivalent classes of loops.
+% \end{itemize}
 
-\begin{eg}
-    Let $X = B^2$ (2 dimensional disk).
-    Then $\pi(B^2) = 1$, because every loop is equivalent to the `constant' loop.
-\end{eg}
-\begin{eg}
-    Let $X = S^{1}$ and pick $x_0$ on the circle.
-    Two options: 
-    \begin{itemize}
-        \item The loop is trivial equivalent to the constant loop
-        \item The loop goes around the circle.
-        \item The loop goes around the circle, twice.
-        \item The loop goes around the circle, clockwise, once
-        \item \ldots
-    \end{itemize}
-    $\pi(S^{1}) \cong \Z$ (proof will follow).
-\end{eg}
+% \begin{eg}
+%     Let $X = B^2$ (2 dimensional disk).
+%     Then $\pi(B^2) = 1$, because every loop is equivalent to the `constant' loop.
+% \end{eg}
+% \begin{eg}
+%     Let $X = S^{1}$ and pick $x_0$ on the circle.
+%     Two options: 
+%     \begin{itemize}
+%         \item The loop is trivial equivalent to the constant loop
+%         \item The loop goes around the circle.
+%         \item The loop goes around the circle, twice.
+%         \item The loop goes around the circle, clockwise, once
+%         \item \ldots
+%     \end{itemize}
+%     $\pi(S^{1}) \cong \Z$ (proof will follow).
+% \end{eg}
 
-The composition of loops is simply pasting them.
-In the case of the circle, the loop $-1$  $\circ$ the loop  $2$ is the loop $1$.
+% The composition of loops is simply pasting them.
+% In the case of the circle, the loop $-1$  $\circ$ the loop  $2$ is the loop $1$.
 
-Suppose $\alpha: I \to  X$ and $f : X\to Y$. Then we define 
-\[
-    f_*[\alpha] = [f \circ \alpha]
-.\] 
-
-
-\begin{theorem}[Fixed point theorem of Brouwer]
-    Any continuous map from a rectangle to itself has at least one fixed point.
-\end{theorem}
-\begin{proof}
-    Suppose there is no fixed point, so $f(x) \neq x$ for all  $x \in B^2$.
-    Then we can construct map $r : B^2 \to  S_1$ as follows:
-    take the intersection of the boundary and half ray between $f(x)$ and $x$.
-    \begin{figure}[H]
-        \centering
-        \incfig{proof-fixed-point-brouwer}
-        \caption{Proof of the Brouwer fixed point theorem}
-        \label{fig:proof-fixed-point-brouwer}
-    \end{figure}
-    If $x$ lies on the boundary, we have the identity map.
-    This map is continuous.
-    Then we have $S^1 \to B^2 \to S^1$, via the inclusion and $r$.
-    Looking at the fundamental groups:
-    \[
-        \pi(S^1)  =\Z \to  \pi(B^2) = 1 \to  \pi(S^1) = \Z
-    .\] 
-    The map from $\pi(S^1) \to  \pi(S^{1})$ is the identity map, but the first map maps everything on $1$. \phantom\qedhere\hfill\contra 
-\end{proof}
+% Suppose $\alpha: I \to  X$ and $f : X\to Y$. Then we define 
+% \[
+%     f_*[\alpha] = [f \circ \alpha]
+% .\] 
 
 
-
-\setcounter{chapter}{1}
-\chapter{Fundamental group}
-
-\setcounter{section}{50}
-\section{Homotopy of paths}
-\begin{definition}[Homotopy]
-    Let $f,g:X\to Y$ be maps (so continuous). Then a homotopy between $f$ and $g$ is a continuous map $H: X\times I \to Y$ such that
-    \begin{itemize}
-        \item $H(x, 0) = f(x)$, $H(x, 1) = g(x)$ 
-        \item For all $t \in I$, define $f_t: X \to  Y: x \mapsto  H(x, t)$
-    \end{itemize}
-    We say that $f$ is homotopic with $g$, we write $f \simeq g$.
-    If $g$ is a constant map, we say that $f$ is null homotopic.
-\end{definition}
-
-\begin{definition}[Path homotopy]
-    Let $f, g: I \to  X$ be two paths such that $f(0) = g(0) = x_0$ and $f(1) = g(1) = x_1$. Then $H: I \times  I \to  X$ is a path homotopy between $f$ and $g$, if and only if
-    \begin{itemize}
-        \item $H(s,0) = f(s)$ and  $H(s, 1) = g(s)$ (homotopy between maps)
-        \item  $H(0, t) = x_0$ and $H(1, t) = x_1$ (start and end points fixed)
-    \end{itemize}
-    Notation: $f \simeq_p g$.
-\end{definition}
+% \begin{theorem}[Fixed point theorem of Brouwer]
+%     Any continuous map from a rectangle to itself has at least one fixed point.
+% \end{theorem}
+% \begin{proof}
+%     Suppose there is no fixed point, so $f(x) \neq x$ for all  $x \in B^2$.
+%     Then we can construct map $r : B^2 \to  S_1$ as follows:
+%     take the intersection of the boundary and half ray between $f(x)$ and $x$.
+%     \begin{figure}[H]
+%         \centering
+%         \incfig{proof-fixed-point-brouwer}
+%         \caption{Proof of the Brouwer fixed point theorem}
+%         \label{fig:proof-fixed-point-brouwer}
+%     \end{figure}
+%     If $x$ lies on the boundary, we have the identity map.
+%     This map is continuous.
+%     Then we have $S^1 \to B^2 \to S^1$, via the inclusion and $r$.
+%     Looking at the fundamental groups:
+%     \[
+%         \pi(S^1)  =\Z \to  \pi(B^2) = 1 \to  \pi(S^1) = \Z
+%     .\] 
+%     The map from $\pi(S^1) \to  \pi(S^{1})$ is the identity map, but the first map maps everything on $1$. \phantom\qedhere\hfill\contra 
+% \end{proof}
 
 
-\begin{figure}[ht]
-    \centering
-    \incfig{homotopy-general-example}
-    \caption{General example of a homotopy.}
-    \label{fig:homotopy-general-example}
-\end{figure}
+
+% \setcounter{chapter}{1}
+% \chapter{Fundamental group}
+
+% \setcounter{section}{50}
+% \section{Homotopy of paths}
+% \begin{definition}[Homotopy]
+%     Let $f,g:X\to Y$ be maps (so continuous). Then a homotopy between $f$ and $g$ is a continuous map $H: X\times I \to Y$ such that
+%     \begin{itemize}
+%         \item $H(x, 0) = f(x)$, $H(x, 1) = g(x)$ 
+%         \item For all $t \in I$, define $f_t: X \to  Y: x \mapsto  H(x, t)$
+%     \end{itemize}
+%     We say that $f$ is homotopic with $g$, we write $f \simeq g$.
+%     If $g$ is a constant map, we say that $f$ is null homotopic.
+% \end{definition}
+
+% \begin{definition}[Path homotopy]
+%     Let $f, g: I \to  X$ be two paths such that $f(0) = g(0) = x_0$ and $f(1) = g(1) = x_1$. Then $H: I \times  I \to  X$ is a path homotopy between $f$ and $g$, if and only if
+%     \begin{itemize}
+%         \item $H(s,0) = f(s)$ and  $H(s, 1) = g(s)$ (homotopy between maps)
+%         \item  $H(0, t) = x_0$ and $H(1, t) = x_1$ (start and end points fixed)
+%     \end{itemize}
+%     Notation: $f \simeq_p g$.
+% \end{definition}
 
 
-\begin{lemma}
-    $\simeq$ and  $\simeq_p$ are equivalence relations.
-\end{lemma}
-\begin{proof}
-    \leavevmode
-    \begin{itemize}
-        \item Reflective: $F(x, t) = f(x)$
-        \item Symmetric: $G(x, t) = H(x, 1-t)$ 
-        \item Transitive:  Suppose $f \simeq g$ and  $g \simeq h$, with  $H_1, H_2$ resp.
-            \[
-                H(x, t) = \begin{cases}
-                    H_1(x, 2t) & 0 \le t \le  \frac{1}{2}\\
-                    H_2(x, 2t-1) & \frac{1}{2} \le  t \le  1
-                \end{cases}
-            . \qedhere
-        \] 
-    \end{itemize}
-\end{proof}
+% \begin{figure}[ht]
+%     \centering
+%     \incfig{homotopy-general-example}
+%     \caption{General example of a homotopy.}
+%     \label{fig:homotopy-general-example}
+% \end{figure}
 
 
-\begin{eg}[Trivial, but important]
-   Let $C \subset \R^n$ be a convex subset.
-   \begin{itemize}
-       \item Any two maps $f, g: X \to C$ are homotopic.
-       \item Any two paths $f, g: I \to  C$ with $f(0) = g(0)$ and  $g(1) = f(1)$ are path homotopic.
-   \end{itemize}
-
-   Choose $H: X \times I \to  C: (x, t) \to  H(x, t) = (1-t) f(x) + t g(x)$.
-\end{eg}
-
-
-\subsection*{Product of paths}
-Let $f: I\to X$, $g: I \to X$ be paths, $f(1) = g(0)$.
-Define  \[
-    f*g: I \to X: s \mapsto \begin{cases}
-        f(2s) & 0 \le  s \le  \frac{1}{2}\\
-        g(2s - 1) & \frac{1}{2}\le s\le 1.
-\end{cases}
-\]
-\begin{remark}
-    If $f$ is path homotopic to $f'$ and $g$ path homotopic to $g'$ (which means that $f(1) = f'(1) = g(0) = g'(0)$), then $f * g \simeq_p f' * g'$.
-\end{remark}
-
-So we can define $[f] * [g] := [f*g]$ with $[f] := \{g : I \to  X  \mid g \simeq_p f\} $
-
-\begin{theorem}\leavevmode
-    \begin{enumerate}
-        \item $[f] * ([g] * [h])$  is defined iff $([f] * [g])*[h]$ is defined and in that case, they are equal.
-        \item Let $e_x$ denote the constant path $e_x: I \to  X: s \mapsto x$, $x \in X$. If $f(0) = x_0$ and $f(1) = x_1$ then $[e_{x_0}] * [f] = [f]$ and $[f] * [e_{x_1}] = [f]$.
-        \item Let $\overline{f} : I \to  X: s \mapsto  f(1-s)$. Then $[f] * [\overline{f}] = [e_{x_0}]$ and $[\overline{f}]*[f] = [e_{x_1}]$
-    \end{enumerate}
-\end{theorem}
-\begin{proof}
-    First, two observations
-    \begin{itemize}
-        \item Suppose $f\simeq_p g$ via homotopy $H$, $f, g: I\to X$.
-            Let $k: X \to  Y$.
-            Then $k  \circ  f \simeq_p k \circ g$ using $k  \circ H$.
-        \item If $f*g$ (not necessarily path homotopic). Then $ k  \circ (f*g) = (k \circ f) * (k \circ g) .$ 
-    \end{itemize}
-
-    Now, the proof
-    \begin{itemize}
-        \item[2.]  Take $e_0: I \to  I: s \mapsto 0$.
-            Take $i: I \to  I: s \mapsto s$ 
-            Then $e_0*i$ is a path from $0$ to $1 \in I$.
-            The path $i$ is also such a path.
-            Because $I$ is a convex subset, $e_0*i$ and $i$ are path homotopic, $e_0 *i\simeq_p i$.
-            Using one of our observations, we find that
-            \begin{align*}
-                f  \circ (e_0 * i) &\simeq_p  f  \circ i\\
-                (f  \circ  e_0) * (f  \circ  i ) &\simeq_p f\\
-                e_{x_0} * f  &\simeq_p f\\
-                [e_{x_0}] * [f]  &= [f]
-            .\end{align*}
-
-        \item [3.] Note that $i * \overline{i} \simeq_p e_0$.
-            Now, applying the same rules, we get 
-            \begin{align*}
-                f  \circ (i * \overline{i}) &\simeq_p f  \circ  e_0\\
-                f * \overline{f} &\simeq_p  e_{x_0}\\
-                [f] * [\overline{f}] & = [e_{x_0}]
-            .\end{align*}
-        \item[1.]  Remark: Only defined if $f(1) = g(0), g(1) = h(0)$.
-            Note that $f*(g*h) \neq (f*g)*h$. The trajectory is the same, but the speed is not.
-
-            Assume the product is defined.
-            Suppose $[a, b]$,  $[c, d]$ are intervals in  $\R$.
-            Then there is a unique positive (positive slope), linear map from $[a, b] \to [c,d]$.
-            For any $a, b \in [0, 1)$ with $ 0<a<b<1$, we define a path
-            \begin{align*}
-                k_{a,b}: [0, 1] &\longrightarrow  X\\
-                [0, a] & \xrightarrow{\text{lin.}}[0, 1] \xrightarrow{f}  X\\
-                [a, b] & \xrightarrow{\text{lin.}}[0, 1] \xrightarrow{g}  X\\
-                [b, 0] & \xrightarrow{\text{lin.}}[0, 1] \xrightarrow{h}  X\\
-            \end{align*} 
-
-            Then $f*(g*h) = k_{\frac{1}{2}, \frac{3}{4}}$ and $(f*g)*h = k_{\frac{1}{4}, \frac{1}{2}}$
-
-            Let $\gamma$ be that path $\gamma:I \to  I$ with the following graphs:
-
-            \begin{figure}[H]
-                \centering
-                \incfig{proof-path}
-                \caption{proof path}
-                \label{fig:proof-path}
-            \end{figure}
-            Note  that $\gamma \simeq_p i$.
-            Now, using the fact that composition of positive linear maps is positive linear.
-            \begin{align*}
-                k_{c, d}  \circ  \gamma &\simeq_p  k_{c, d}  \circ i\\
-                k_{a, b} &\simeq_p  k_{c, d},
-            \end{align*} 
-            which is what we wanted to show.
-    \end{itemize}
-\end{proof}
+% \begin{lemma}
+%     $\simeq$ and  $\simeq_p$ are equivalence relations.
+% \end{lemma}
+% \begin{proof}
+%     \leavevmode
+%     \begin{itemize}
+%         \item Reflective: $F(x, t) = f(x)$
+%         \item Symmetric: $G(x, t) = H(x, 1-t)$ 
+%         \item Transitive:  Suppose $f \simeq g$ and  $g \simeq h$, with  $H_1, H_2$ resp.
+%             \[
+%                 H(x, t) = \begin{cases}
+%                     H_1(x, 2t) & 0 \le t \le  \frac{1}{2}\\
+%                     H_2(x, 2t-1) & \frac{1}{2} \le  t \le  1
+%                 \end{cases}
+%             . \qedhere
+%         \] 
+%     \end{itemize}
+% \end{proof}
 
 
-\section{Fundamental group}
-\begin{definition}
-    Let $X$ be a space and $x_0 \in X$, then the fundamental group of $X$ based at $x_0$ is
-    \[
-        \pi(X, x_0) = \{ [f]  \mid  f : I \to X, f(0) = f(1) = x_0\} 
-    .\] 
-    (Also $\pi_1(X, x_0)$ is used, first homotopy group of $X$ based at $x_0$)
+% \begin{eg}[Trivial, but important]
+%    Let $C \subset \R^n$ be a convex subset.
+%    \begin{itemize}
+%        \item Any two maps $f, g: X \to C$ are homotopic.
+%        \item Any two paths $f, g: I \to  C$ with $f(0) = g(0)$ and  $g(1) = f(1)$ are path homotopic.
+%    \end{itemize}
 
-    For $[f], [g] \in \pi(X, x_0)$, $[f] * [g]$ is always defined,  $[e_{x_0}]$ is an identity element, $*$ is associative and $[f]^{-1} = [\overline{f}]$. This makes $(\pi(X, x_0), *)$ a group.
-\end{definition}
-\begin{eg}
-    If $C \subset \R^n$, convex then $\pi(X, x_0) = 1$.
-    E.g. $\pi(B^2, x_0) = 1$.
-\end{eg}
+%    Choose $H: X \times I \to  C: (x, t) \to  H(x, t) = (1-t) f(x) + t g(x)$.
+% \end{eg}
 
-\begin{remark}
-    All groups are a fundamental group of some space.
-\end{remark}
 
-Question: how does the group depend on  the base point?
+% \subsection*{Product of paths}
+% Let $f: I\to X$, $g: I \to X$ be paths, $f(1) = g(0)$.
+% Define  \[
+%     f*g: I \to X: s \mapsto \begin{cases}
+%         f(2s) & 0 \le  s \le  \frac{1}{2}\\
+%         g(2s - 1) & \frac{1}{2}\le s\le 1.
+% \end{cases}
+% \]
+% \begin{remark}
+%     If $f$ is path homotopic to $f'$ and $g$ path homotopic to $g'$ (which means that $f(1) = f'(1) = g(0) = g'(0)$), then $f * g \simeq_p f' * g'$.
+% \end{remark}
 
-\begin{theorem}[52.1]
-    Let $X$ be a space, $x_0, x_1 \in X$ and $\alpha: I \to X$ a path from  $x_0$ to $x_1$.
-    Then
-    \begin{align*}
-        \hat{\alpha}: \pi(X, x_0) &\longrightarrow\pi(x, x_1)\\
-        [f] &\longmapsto  [\overline{\alpha}] * [f] * [\alpha]
-    .\end{align*}
-    is an isomorphisms of groups. Note however that this isomorphism depends on $\alpha$.
-\end{theorem}
-\begin{proof}
-    Let $[f], [g] \in \pi_1(X, x_0)$.
-    Then 
-    \begin{align*}
-        \hat{\alpha}([f]*[g]) &= [\overline{\alpha}] * [f] * [g] * [\alpha]\\
-                              &= [\overline{\alpha}] *[f] * [\alpha] * [\overline{\alpha}] * [g] * [\alpha]\\
-                              &= \hat{\alpha}[f] * \hat{\alpha}[g]
-    .\end{align*}
-    We can also construct the inverse, proving that these groups are isomorphic.
-\end{proof}
+% So we can define $[f] * [g] := [f*g]$ with $[f] := \{g : I \to  X  \mid g \simeq_p f\} $
 
-\begin{figure}[ht]
-    \centering
-    \incfig{dependence-of-base-point}
-    \caption{Construction of the group homomorphism}
-    \label{fig:dependence-of-base-point}
-\end{figure}
-\begin{remark}
-    If $f: (x, x_0) \to (Y, y_0)$ is a map of pointed topology spaces ($f: X \to Y$ continuous and $f(x_0) = y_0$).
-    Then \[
-        f_*:\pi(X, x_0) \to  \pi(Y, y_0): [\gamma] \mapsto [f  \circ \gamma]
-    \]
-    is a morphism of groups, because of the two `rules' discussed previously, with
-    \[
-        (f \circ g)_* = f_*  \circ g_* \qquad (1_X)_* = 1_{\pi(X, x_0)}
-    .\] 
-\end{remark}
+% \begin{theorem}\leavevmode
+%     \begin{enumerate}
+%         \item $[f] * ([g] * [h])$  is defined iff $([f] * [g])*[h]$ is defined and in that case, they are equal.
+%         \item Let $e_x$ denote the constant path $e_x: I \to  X: s \mapsto x$, $x \in X$. If $f(0) = x_0$ and $f(1) = x_1$ then $[e_{x_0}] * [f] = [f]$ and $[f] * [e_{x_1}] = [f]$.
+%         \item Let $\overline{f} : I \to  X: s \mapsto  f(1-s)$. Then $[f] * [\overline{f}] = [e_{x_0}]$ and $[\overline{f}]*[f] = [e_{x_1}]$
+%     \end{enumerate}
+% \end{theorem}
+% \begin{proof}
+%     First, two observations
+%     \begin{itemize}
+%         \item Suppose $f\simeq_p g$ via homotopy $H$, $f, g: I\to X$.
+%             Let $k: X \to  Y$.
+%             Then $k  \circ  f \simeq_p k \circ g$ using $k  \circ H$.
+%         \item If $f*g$ (not necessarily path homotopic). Then $ k  \circ (f*g) = (k \circ f) * (k \circ g) .$ 
+%     \end{itemize}
+
+%     Now, the proof
+%     \begin{itemize}
+%         \item[2.]  Take $e_0: I \to  I: s \mapsto 0$.
+%             Take $i: I \to  I: s \mapsto s$ 
+%             Then $e_0*i$ is a path from $0$ to $1 \in I$.
+%             The path $i$ is also such a path.
+%             Because $I$ is a convex subset, $e_0*i$ and $i$ are path homotopic, $e_0 *i\simeq_p i$.
+%             Using one of our observations, we find that
+%             \begin{align*}
+%                 f  \circ (e_0 * i) &\simeq_p  f  \circ i\\
+%                 (f  \circ  e_0) * (f  \circ  i ) &\simeq_p f\\
+%                 e_{x_0} * f  &\simeq_p f\\
+%                 [e_{x_0}] * [f]  &= [f]
+%             .\end{align*}
+
+%         \item [3.] Note that $i * \overline{i} \simeq_p e_0$.
+%             Now, applying the same rules, we get 
+%             \begin{align*}
+%                 f  \circ (i * \overline{i}) &\simeq_p f  \circ  e_0\\
+%                 f * \overline{f} &\simeq_p  e_{x_0}\\
+%                 [f] * [\overline{f}] & = [e_{x_0}]
+%             .\end{align*}
+%         \item[1.]  Remark: Only defined if $f(1) = g(0), g(1) = h(0)$.
+%             Note that $f*(g*h) \neq (f*g)*h$. The trajectory is the same, but the speed is not.
+
+%             Assume the product is defined.
+%             Suppose $[a, b]$,  $[c, d]$ are intervals in  $\R$.
+%             Then there is a unique positive (positive slope), linear map from $[a, b] \to [c,d]$.
+%             For any $a, b \in [0, 1)$ with $ 0<a<b<1$, we define a path
+%             \begin{align*}
+%                 k_{a,b}: [0, 1] &\longrightarrow  X\\
+%                 [0, a] & \xrightarrow{\text{lin.}}[0, 1] \xrightarrow{f}  X\\
+%                 [a, b] & \xrightarrow{\text{lin.}}[0, 1] \xrightarrow{g}  X\\
+%                 [b, 0] & \xrightarrow{\text{lin.}}[0, 1] \xrightarrow{h}  X\\
+%             \end{align*} 
+
+%             Then $f*(g*h) = k_{\frac{1}{2}, \frac{3}{4}}$ and $(f*g)*h = k_{\frac{1}{4}, \frac{1}{2}}$
+
+%             Let $\gamma$ be that path $\gamma:I \to  I$ with the following graphs:
+
+%             \begin{figure}[H]
+%                 \centering
+%                 \incfig{proof-path}
+%                 \caption{proof path}
+%                 \label{fig:proof-path}
+%             \end{figure}
+%             Note  that $\gamma \simeq_p i$.
+%             Now, using the fact that composition of positive linear maps is positive linear.
+%             \begin{align*}
+%                 k_{c, d}  \circ  \gamma &\simeq_p  k_{c, d}  \circ i\\
+%                 k_{a, b} &\simeq_p  k_{c, d},
+%             \end{align*} 
+%             which is what we wanted to show.
+%     \end{itemize}
+% \end{proof}
+
+
+% \section{Fundamental group}
+% \begin{definition}
+%     Let $X$ be a space and $x_0 \in X$, then the fundamental group of $X$ based at $x_0$ is
+%     \[
+%         \pi(X, x_0) = \{ [f]  \mid  f : I \to X, f(0) = f(1) = x_0\} 
+%     .\] 
+%     (Also $\pi_1(X, x_0)$ is used, first homotopy group of $X$ based at $x_0$)
+
+%     For $[f], [g] \in \pi(X, x_0)$, $[f] * [g]$ is always defined,  $[e_{x_0}]$ is an identity element, $*$ is associative and $[f]^{-1} = [\overline{f}]$. This makes $(\pi(X, x_0), *)$ a group.
+% \end{definition}
+% \begin{eg}
+%     If $C \subset \R^n$, convex then $\pi(X, x_0) = 1$.
+%     E.g. $\pi(B^2, x_0) = 1$.
+% \end{eg}
+
+% \begin{remark}
+%     All groups are a fundamental group of some space.
+% \end{remark}
+
+% Question: how does the group depend on  the base point?
+
+% \begin{theorem}[52.1]
+%     Let $X$ be a space, $x_0, x_1 \in X$ and $\alpha: I \to X$ a path from  $x_0$ to $x_1$.
+%     Then
+%     \begin{align*}
+%         \hat{\alpha}: \pi(X, x_0) &\longrightarrow\pi(x, x_1)\\
+%         [f] &\longmapsto  [\overline{\alpha}] * [f] * [\alpha]
+%     .\end{align*}
+%     is an isomorphisms of groups. Note however that this isomorphism depends on $\alpha$.
+% \end{theorem}
+% \begin{proof}
+%     Let $[f], [g] \in \pi_1(X, x_0)$.
+%     Then 
+%     \begin{align*}
+%         \hat{\alpha}([f]*[g]) &= [\overline{\alpha}] * [f] * [g] * [\alpha]\\
+%                               &= [\overline{\alpha}] *[f] * [\alpha] * [\overline{\alpha}] * [g] * [\alpha]\\
+%                               &= \hat{\alpha}[f] * \hat{\alpha}[g]
+%     .\end{align*}
+%     We can also construct the inverse, proving that these groups are isomorphic.
+% \end{proof}
+
+% \begin{figure}[ht]
+%     \centering
+%     \incfig{dependence-of-base-point}
+%     \caption{Construction of the group homomorphism}
+%     \label{fig:dependence-of-base-point}
+% \end{figure}
+% \begin{remark}
+%     If $f: (x, x_0) \to (Y, y_0)$ is a map of pointed topology spaces ($f: X \to Y$ continuous and $f(x_0) = y_0$).
+%     Then \[
+%         f_*:\pi(X, x_0) \to  \pi(Y, y_0): [\gamma] \mapsto [f  \circ \gamma]
+%     \]
+%     is a morphism of groups, because of the two `rules' discussed previously, with
+%     \[
+%         (f \circ g)_* = f_*  \circ g_* \qquad (1_X)_* = 1_{\pi(X, x_0)}
+%     .\] 
+% \end{remark}
